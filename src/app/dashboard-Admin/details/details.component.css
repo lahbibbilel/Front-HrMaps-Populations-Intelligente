@@ -1,0 +1,15 @@
+/* Ajoutez ces styles dans votre fichier CSS ou balise <style> */
+
+/* Style pour simuler le texte en gras */
+.example-form-container input[disabled] {
+  color: #000; /* Couleur du texte (noir par exemple) */
+  background-color: #f0f0f0; /* Couleur de fond pour indiquer le champ désactivé */
+  font-style: italic; /* Italique pour simuler le gras */
+}
+
+/* Style pour conserver le texte en gras dans les autres champs */
+.example-form-container input:not([disabled]) {
+  font-weight: bold; /* Appliquer le vrai gras */
+}
+
+/* Optionnel : ajustez d'autres styles selon vos besoins */

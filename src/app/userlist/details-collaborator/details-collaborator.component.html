@@ -1,0 +1,142 @@
+<!-- update-population-body.component.html -->
+
+<div class="example-form-container">
+  <mat-form-field class="example-full-width">
+    <mat-label >details</mat-label>
+    <input matInput disabled value="details">
+  </mat-form-field>
+
+  <table class="example-full-width" cellspacing="0">
+
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Firstname</mat-label>
+          <input matInput value="{{collab.firstname}}" name="firstname" required disabled>
+
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>lastname</mat-label>
+          <input matInput value="{{collab.lastname}}" name="lastname" required disabled>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>email</mat-label>
+          <input matInput value="{{collab.email}}" name="email" required disabled>
+
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>password</mat-label>
+          <input matInput value="{{collab.password}}" name="password" required disabled>
+        </mat-form-field>
+      </td>
+    </tr>
+
+
+
+
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Durée Travail</mat-label>
+          <input matInput value="{{collab.dureeTravail}}" name="dureeTravail" required disabled>
+
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Ancienneté</mat-label>
+    <input matInput value="{{collab.anciennete}}" name="anciennete" required disabled>
+
+  </mat-form-field>
+
+  <p>
+    <mat-form-field class="example-full-width">
+      <mat-label>Date Début</mat-label>
+      <input matInput value="{{collab.dateDebutContrat}}"
+             type="date" id="start" name="dateDebutContrat"  name="dateDebutContrat" required disabled>
+
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Date Fin</mat-label>
+      <input matInput value="{{collab.dateFinContrat}}" type="date"
+             id="finish" name="dateFinContrat"  name="dateFinContrat" required disabled>
+
+    </mat-form-field>
+  </p>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Categorie Socio-Professionnelle</mat-label>
+          <input matInput value="{{collab.categorieSocioProfessionnelle}}"
+                 name="categorieSocioProfessionnelle" required disabled >
+
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Department</mat-label>
+          <input matInput value="{{collab.departement}}"
+                 placeholder="Ex. California" name="departement" required disabled>
+
+        </mat-form-field>
+      </td>
+
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Gender</mat-label>
+          <input matInput value="{{collab.genre}}"
+                 placeholder="Ex. California" name="gender" required disabled>
+
+        </mat-form-field>
+      </td>
+
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Age</mat-label>
+          <input matInput maxlength="5" value="{{collab.age}}" name="age" required disabled>
+
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Niveau Education</mat-label>
+          <input matInput maxlength="5" value="{{collab.niveauEducation}}" name="niveauEducation" required disabled>
+
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Région Géographique</mat-label>
+          <input matInput maxlength="5" value="{{collab.regionGeographique}}" name="regionGeographique" required disabled>
+
+        </mat-form-field>
+      </td>
+    </tr>
+
+  </table>
+
+  <section class="example-button-row">
+
+  </section>
+
+  <mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="closeDialog()">Close</button>
+
+  </mat-dialog-actions>
+
+</div>

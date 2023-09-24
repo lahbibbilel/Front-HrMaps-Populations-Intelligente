@@ -1,0 +1,55 @@
+<!-- update-population-body.component.html -->
+
+<div class="example-form-container">
+  <form class="example-form" (ngSubmit)="updateEmployees()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Update profil</mat-label>
+      <input matInput disabled value="">
+    </mat-form-field>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>firstname</mat-label>
+            <input matInput [(ngModel)]="profil.firstname" name="firstname" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>lastname</mat-label>
+            <input matInput [(ngModel)]="profil.lastname" name="lastname" required>
+          </mat-form-field>
+        </td>
+
+        </tr>
+    </table>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>password</mat-label>
+      <input matInput [ngModel]="profil.password" name="password" required>
+    </mat-form-field>
+<br>
+
+
+    <!-- ... other form fields ... -->
+
+    <!-- ... other form fields ... -->
+
+    <input name="image" type="file" (change)="onFileSelected($event)">
+
+    <!-- ... other form fields ... -->
+
+    <!-- ... other form fields ... -->
+
+<br> <br>
+
+    <section class="example-button-row" center>
+      <button type="submit" mat-stroked-button color="primary">Update</button>
+    <button mat-raised-button type="reset" color="warn" (click)="exitWithProgress()">Cancel</button>
+    </section>
+  </form>
+  <mat-dialog-actions>
+  </mat-dialog-actions>
+
+</div>

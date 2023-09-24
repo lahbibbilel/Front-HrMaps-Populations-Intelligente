@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card-container" *ngIf="authenticatedUser">
+    <ng-container *ngIf="authenticatedUser.firstname; else noFirstName">
+      {{ authenticatedUser.firstname }}
+      {{ authenticatedUser.lastname }}
+    </ng-container>
+    <ng-template #noFirstName>
+      No First Name Available
+    </ng-template>
+    <br>
+    <div class="image-container">
+      <img class="round" [src]="getImageUrl(authenticatedUser.image)" alt="user" />
+    </div>
+    <p class="small text-muted mb-1">Last Name: {{ authenticatedUser.firstname }}</p>
+    <p class="small text-muted mb-1">Last Name: {{ authenticatedUser.lastname }}</p>
+    <p class="small text-muted mb-1">Email: {{ authenticatedUser.email }}</p>
+    <p><br/></p>
+    <div>
+      <button (click)="openDialog()" mat-raised-button color="primary">
+        <mat-icon>update</mat-icon>
+      </button>
+      <br><br><br>
+    </div>
+  </div>
+</div>

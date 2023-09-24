@@ -1,0 +1,117 @@
+<!-- app.component.html -->
+
+<div class="example-form-container">
+  <form class="example-form" (ngSubmit)="addPopulation()">
+    <!-- Your form fields and inputs -->
+
+  <mat-form-field class="example-full-width">
+      <mat-label></mat-label>
+      <input matInput disabled value="">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>PopulationName</mat-label>
+      <input matInput [(ngModel)]="population.populationName" name="populationName" required>
+    </mat-form-field>
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Contrat Type</mat-label>
+            <input matInput [(ngModel)]="population.contratType" name="contratType" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Durée Travail</mat-label>
+            <input matInput [(ngModel)]="population.dureeTravail" name="dureeTravail" required>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Ancienneté</mat-label>
+      <input matInput [(ngModel)]="population.anciennete" name="anciennete" required>
+    </mat-form-field>
+
+
+
+
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Date Début</mat-label>
+        <input matInput type="date" id="start" name="dateDebutContrat" [(ngModel)]="population.dateDebutContrat" name="dateDebutContrat" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Date Fin</mat-label>
+        <input matInput type="date" id="finish" name="dateFinContrat" [(ngModel)]="population.dateFinContrat" name="dateFinContrat" required>
+      </mat-form-field>
+    </p>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Categorie Socio-Professionnelle</mat-label>
+            <input matInput [(ngModel)]="population.categorieSocioProfessionnelle" name="categorieSocioProfessionnelle" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Department</mat-label>
+            <input matInput placeholder="Ex. California" [(ngModel)]="population.departement" name="departement" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Genre</mat-label>
+            <mat-select [(ngModel)]="population.genre" name="genre" required>
+              <mat-option value="">--Please choose an option--</mat-option>
+              <mat-option value="Homme">Homme</mat-option>
+              <mat-option value="Femme">Femme</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Age</mat-label>
+            <input matInput maxlength="5" [(ngModel)]="population.age" name="age" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Niveau Education</mat-label>
+            <input matInput maxlength="5" [(ngModel)]="population.niveauEducation" name="niveauEducation" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Région Géographique</mat-label>
+            <input matInput maxlength="5" [(ngModel)]="population.regionGeographique" name="regionGeographique" required>
+          </mat-form-field>
+        </td>
+      </tr>
+
+    </table>
+
+    <section class="example-button-row">
+      <button type="submit" mat-stroked-button color="primary">Register</button>
+      <button mat-raised-button color="warn" type="reset" (click)="exitWithProgress()">Close</button>
+
+    </section>
+
+
+
+
+
+  </form>
+
+  <!-- mat-progress-bar to show progress -->
+  <mat-progress-bar *ngIf="showProgress" mode="query"></mat-progress-bar>
+</div>
+
+

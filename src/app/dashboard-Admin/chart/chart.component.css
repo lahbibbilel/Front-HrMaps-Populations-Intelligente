@@ -1,0 +1,19 @@
+
+
+/* Add this CSS rule to center the chart */
+.chart-container {
+  justify-content: center;
+  align-items: center;
+
+  display: inline-block;
+  width: 50%; /* Each chart takes 50% width to fit side by side */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Adjust the size of the chart */
+#canvas {
+  max-width: 150%; /* Ensure the chart doesn't exceed the container's width */
+  height:500px;
+  max-height: 400px; /* Adjust the height as needed */
+}

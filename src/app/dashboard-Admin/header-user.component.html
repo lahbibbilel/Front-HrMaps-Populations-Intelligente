@@ -1,0 +1,68 @@
+<mat-toolbar color="5691FFFF" class="mat-elevation-z8">
+  <button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>  <img width="80" alt="Angular Logo" src="assets/hrmaps.png" />
+</span>
+  <span class="example-spacer"></span>
+
+  <mat-menu #company="matMenu">
+   </mat-menu>
+  <mat-menu #customer="matMenu">
+  </mat-menu>
+  <mat-menu #product="matMenu">
+   </mat-menu>
+
+  <mat-menu #variant="matMenu">
+   </mat-menu>
+
+    <button (click)="logout()" mat-raised-button color="warn"><mat-icon>power_settings_new</mat-icon></button>
+
+</mat-toolbar>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="true" mode="side" position="start">
+    <mat-nav-list>
+
+      <mat-list-item>
+        <button routerLink="/dashboard/profil" mat-button>
+          <img class="round" width="30" [src]="getImageUrl(authenticatedUser.image)" alt="user" />
+        {{authenticatedUser.firstname}}
+          {{authenticatedUser.lastname}}
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button routerLink="/dashboard/user" mat-button><mat-icon>supervisor_account</mat-icon> Collaborators</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="/dashboard/home" mat-button><mat-icon>group_work</mat-icon> Populations</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="/dashboard/chart" mat-button>
+          <mat-icon >insert_chart</mat-icon> <!-- Replace 'insert_chart' with the desired icon name -->
+          statistics
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button><mat-icon>settings</mat-icon> Settings</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button><mat-icon>help</mat-icon> Help</button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="content-container">
+        <router-outlet></router-outlet>
+      </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+
+
+
+
+

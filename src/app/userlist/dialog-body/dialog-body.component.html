@@ -1,0 +1,139 @@
+<!-- app.component.html -->
+
+<div class="example-form-container">
+  <form class="example-form" (ngSubmit)="addCollaborator()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Add collaborator</mat-label>
+      <input matInput disabled value="">
+    </mat-form-field>
+
+    <table class="example-full-width" cellspacing="0">
+
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>firstname</mat-label>
+            <input matInput [(ngModel)]="collaborator.firstname" name="firstname" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>lastname</mat-label>
+            <input matInput [(ngModel)]="collaborator.lastname" name="lastname" required>
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>email</mat-label>
+            <input matInput type="email" [(ngModel)]="collaborator.email" name="email" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>password</mat-label>
+            <input matInput type="password" [(ngModel)]="collaborator.password" name="password" required>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>modelContract</mat-label>
+            <input matInput [(ngModel)]="collaborator.contratType" name="contratType" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>workingTime</mat-label>
+            <input matInput [(ngModel)]="collaborator.dureeTravail" name="dureeTravail" required>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Seniority</mat-label>
+      <input matInput [(ngModel)]="collaborator.anciennete" name="anciennete" required>
+    </mat-form-field>
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>startDate</mat-label>
+        <input matInput type="date" id="start" name="dateDebutContrat" [(ngModel)]="collaborator.dateDebutContrat" name="dateDebutContrat" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>endDate</mat-label>
+        <input matInput type="date" id="finish" name="dateFinContrat" [(ngModel)]="collaborator.dateFinContrat" name="dateFinContrat" required>
+      </mat-form-field>
+    </p>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>socio-ProfessionalCategory</mat-label>
+            <input matInput [(ngModel)]="collaborator.categorieSocioProfessionnelle" name="categorieSocioProfessionnelle" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Department</mat-label>
+            <input matInput placeholder="Ex. California" [(ngModel)]="collaborator.departement" name="departement" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Gender</mat-label>
+            <mat-select [(ngModel)]="collaborator.genre" name="genre" required>
+              <mat-option value="">--Please choose an option--</mat-option>
+              <mat-option value="Homme">Homme</mat-option>
+              <mat-option value="Femme">Femme</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Age</mat-label>
+            <input matInput maxlength="5" [(ngModel)]="collaborator.age" name="age" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>educationalLevel</mat-label>
+            <input matInput maxlength="5" [(ngModel)]="collaborator.niveauEducation" name="niveauEducation" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>geographicalRegion</mat-label>
+            <input matInput maxlength="5" [(ngModel)]="collaborator.regionGeographique" name="regionGeographique" required>
+          </mat-form-field>
+        </td>
+
+      </tr>
+
+    </table>
+
+    <section class="example-button-row">
+      <button type="submit" mat-stroked-button color="primary">Register</button>
+      <button mat-raised-button type="reset" color="warn" (click)="exitWithProgress()">Close</button>
+
+    </section>
+    <!-- dialog-body.component.html -->
+
+
+    <!-- ... Le reste du code ... -->
+
+  </form>
+
+
+  <!-- mat-progress-bar to show progress -->
+  <mat-progress-bar *ngIf="showProgress" mode="query"></mat-progress-bar>
+</div>
+
+

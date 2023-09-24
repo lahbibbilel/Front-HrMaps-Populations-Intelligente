@@ -1,0 +1,122 @@
+<!-- update-population-body.component.html -->
+
+<div class="example-form-container">
+    <mat-form-field class="example-full-width">
+      <mat-label >Population compatible</mat-label>
+      <input matInput disabled value="">
+    </mat-form-field>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>populationId</mat-label>
+            <input matInput value="{{population.id}}"  name="id" required disabled>
+
+          </mat-form-field>
+        </td>
+
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>populationName</mat-label>
+            <input matInput value="{{population.populationName}}"  name="populationName" required disabled>
+
+          </mat-form-field>
+        </td>
+
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Contrat Type</mat-label>
+            <input matInput value="{{population.contratType}}"  name="contratType" required disabled>
+
+          </mat-form-field>
+        </td>
+
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Durée Travail</mat-label>
+            <input matInput value="{{population.dureeTravail}}" name="dureeTravail" required disabled>
+
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Ancienneté</mat-label>
+      <input matInput value="{{population.anciennete}}" name="anciennete" required disabled>
+
+    </mat-form-field>
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Date Début</mat-label>
+        <input matInput value="{{population.dateDebutContrat}}"
+               type="date" id="start" name="dateDebutContrat"  name="dateDebutContrat" required disabled>
+
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Date Fin</mat-label>
+        <input matInput value="{{population.dateFinContrat}}" type="date"
+               id="finish" name="dateFinContrat"  name="dateFinContrat" required disabled>
+
+      </mat-form-field>
+    </p>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Categorie Socio-Professionnelle</mat-label>
+            <input matInput value="{{population.categorieSocioProfessionnelle}}"
+                   name="categorieSocioProfessionnelle" required disabled>
+
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Department</mat-label>
+            <input matInput value="{{population.departement}}"
+                   placeholder="Ex. California" name="departement" required disabled>
+
+          </mat-form-field>
+        </td>
+
+         </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Age</mat-label>
+            <input matInput maxlength="5" value="{{population.age}}" name="age" required disabled>
+
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Niveau Education</mat-label>
+            <input matInput maxlength="5" value="{{population.niveauEducation}}" name="niveauEducation" required disabled>
+
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Région Géographique</mat-label>
+            <input matInput maxlength="5" value="{{population.regionGeographique}}" name="regionGeographique" required disabled>
+
+          </mat-form-field>
+        </td>
+      </tr>
+
+    </table>
+
+    <section class="example-button-row">
+
+    </section>
+
+  <mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="closeDialog()">Close</button>
+
+  </mat-dialog-actions>
+
+</div>

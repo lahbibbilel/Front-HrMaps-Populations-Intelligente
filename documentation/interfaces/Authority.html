@@ -1,0 +1,515 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>front-hr-maps-populations-intelligente documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">front-hr-maps-populations-intelligente documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  Authority</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/userlist/userlist.component.ts</code>
+        </p>
+
+
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#authority" 
+>
+                                            authority
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="authority"></a>
+                                        <span class="name "><b>authority</b>
+                                            <a href="#authority">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>authority:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {AfterViewInit, Component, OnInit, ViewChild} from &#x27;@angular/core&#x27;;
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from &quot;@angular/common/http&quot;;
+import {MatFormFieldModule} from &quot;@angular/material/form-field&quot;;
+import {MatInputModule} from &quot;@angular/material/input&quot;;
+import {MatTableDataSource, MatTableModule} from &quot;@angular/material/table&quot;;
+import {MatSort, MatSortModule} from &quot;@angular/material/sort&quot;;
+import {MatPaginator, MatPaginatorModule} from &quot;@angular/material/paginator&quot;;
+import {EmployeesGet} from &quot;../interfaces/employeesGet&quot;;
+import {MaterialModule} from &quot;../../material.module&quot;;
+import {MatDialog} from &quot;@angular/material/dialog&quot;;
+import {DialogBodyComponent} from &quot;./dialog-body/dialog-body.component&quot;;
+import {FormsModule} from &quot;@angular/forms&quot;;
+import {MatIconModule} from &quot;@angular/material/icon&quot;;
+import {Collaborators} from &quot;../interfaces/Collaborators&quot;;
+import {Router} from &quot;@angular/router&quot;;
+import {catchError, delay, Observable, of, switchMap, throwError} from &quot;rxjs&quot;;
+import {TokenService} from &quot;../services/token.service&quot;;
+import {PopulationServiceService} from &quot;../services/population-service.service&quot;;
+import {ToastrService} from &quot;ngx-toastr&quot;;
+import {Populations} from &quot;../interfaces/populations&quot;;
+import {NgClass} from &quot;@angular/common&quot;;
+import {
+  UpdatePopulationBodyComponent
+} from &quot;../dashboard-Admin/update-population-body/update-population-body.component&quot;;
+import {
+  DeletePopulationBodyComponent
+} from &quot;../dashboard-Admin/delete-population-body/delete-population-body.component&quot;;
+import {DeleteCollabBodyComponent} from &quot;./delete-collab-body/delete-collab-body.component&quot;;
+import {UpdateCollabBodyComponent} from &quot;./update-collab-body/update-collab-body.component&quot;;
+import {CollaboratorDataServiceService} from &quot;../services/collaborator-data-service.service&quot;;
+import {GetpopulationNameBodyComponent} from &quot;./getpopulation-name-body/getpopulation-name-body.component&quot;;
+import {CollaboratorsAdd} from &quot;../interfaces/CollaboratorsAdd&quot;;
+export interface EmployeeT {
+  id: number;
+  firstname: string | null;
+  lastname: string;
+  email: string;
+  password: string;
+  image: string | null;
+  role: string;
+  enabled: boolean;
+  accountNonLocked: boolean;
+  username: string;
+  authorities: Authority[];
+  accountNonExpired: boolean;
+  credentialsNonExpired: boolean;
+}
+
+export interface Authority {
+  authority: string;
+}
+
+
+@Component({
+  selector: &#x27;app-userlist&#x27;,
+  templateUrl: &#x27;./userlist.component.html&#x27;,
+  styleUrls: [&#x27;./userlist.component.css&#x27;],
+  standalone: true,
+  imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, MaterialModule, FormsModule, MatIconModule, NgClass],
+})
+export class UserlistComponent implements OnInit,AfterViewInit {
+//  animal!: string;
+//  name!: string;
+
+  constructor(
+    private http: HttpClient,
+    public dialog: MatDialog, private router: Router
+    , private tokenService: TokenService
+    , private populationService: PopulationServiceService, private toastr: ToastrService
+  ,
+    private collabUpdateService: CollaboratorDataServiceService,
+
+  ) {
+
+  }
+
+  ngOnInit(): void {
+    this.fetchCollaborators();
+
+    // Subscribe to the new population event to update the table
+    this.collabUpdateService.getNewPopulationSubject().subscribe((newPopulation: Populations) &#x3D;&gt; {
+      this.dataSource.data.push(newPopulation);
+      this.dataSource._updateChangeSubscription();
+    });
+  }
+  displayedColumns: string[] &#x3D; [&#x27;id&#x27;,&#x27;firstname&#x27;,&#x27;lastname&#x27;,&#x27;contratType&#x27;, &#x27;dureeTravail&#x27;, &#x27;dateDebutContrat&#x27;, &#x27;dateFinContrat&#x27;,
+    &#x27;anciennete&#x27;, &#x27;categorieSocioProfessionnelle&#x27;, &#x27;departement&#x27;, &#x27;genre&#x27;, &#x27;age&#x27;,
+    &#x27;niveauEducation&#x27;, &#x27;regionGeographique&#x27;, &#x27;populationName&#x27;,
+    &#x27;update&#x27;, &#x27;delete&#x27;, &#x27;saving&#x27;];
+  //&#x27;firstname&#x27;,&#x27;lastname&#x27;,&#x27;email&#x27;,&#x27;password&#x27;,
+  dataSource!: MatTableDataSource&lt;Collaborators&gt;;
+
+  coll!:CollaboratorsAdd
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+
+  openDialog(): void {
+    const dialogRef &#x3D; this.dialog.open(DialogBodyComponent, {
+//      data: {name: this.name, animal: this.animal},
+    });
+
+    dialogRef.afterClosed().subscribe(result &#x3D;&gt; {
+      console.log(&#x27;The dialog was closed&#x27;);
+    //  this.animal &#x3D; result;
+    });
+  }
+
+
+  ngAfterViewInit() {
+    if (this.dataSource) {
+      this.dataSource.paginator &#x3D; this.paginator;
+      this.dataSource.sort &#x3D; this.sort;
+    }
+  }
+
+  fetchCollaborators(): void {
+    this.http.get&lt;Collaborators[]&gt;(&#x27;http://localhost:8282/collaborators/all&#x27;).subscribe(
+      data &#x3D;&gt; {
+        this.dataSource &#x3D; new MatTableDataSource&lt;Collaborators&gt;(data);
+        this.dataSource.paginator &#x3D; this.paginator;
+        this.dataSource.sort &#x3D; this.sort;
+
+        // Check if there is a populationName saved in local storage for each collaborator
+        this.dataSource.data.forEach((row) &#x3D;&gt; {
+          const populationName &#x3D; localStorage.getItem(&#x60;populationName_${row.id}&#x60;);
+          if (populationName) {
+            row.populationName &#x3D; populationName;
+          }
+        });
+      },
+      error &#x3D;&gt; {
+        console.error(error);
+
+      }
+    );
+  }
+
+
+  applyFilter(event: Event) {
+    const filterValue &#x3D; (event.target as HTMLInputElement).value;
+    this.dataSource.filter &#x3D; filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+  /* updatePopulationWithCollaborator(row: Collaborators): void {
+     const id &#x3D; 1;
+     const collaboratorId &#x3D; row.id; // Replace with the correct collaborator ID
+
+     this.http
+       .put(&#x60;http://localhost:8282/populations/${id}/collaborator/${collaboratorId}&#x60;, {})
+       .subscribe((response)&#x3D;&gt; {
+         //debugger;
+         console.log(response);
+      if (response &#x3D;&#x3D;&#x3D; &#x27;error  bro&#x27;) {
+               this.toastr.error(&#x27;Data not compatible&#x27;, &#x27;Error&#x27;);
+               // Perform any additional actions for a session expired error
+             } else {
+               this.toastr.success(&#x27;Population updated successfully with collaborator data.&#x27;, &#x27;Success&#x27;);
+               console.log(&#x27;Population updated successfully with collaborator data&#x27;);}}
+               // Perform additional logic or update the user interface after a successful population update
+
+       );
+ }
+ */
+  updatePopulationWithCollaborator(row: Collaborators): void {
+    const collaboratorId &#x3D; row.id;
+
+    this.getPopulations().subscribe((populations) &#x3D;&gt; {
+      if (!populations) {
+        // If populations is null, call the delete API and show toaster warning
+        this.http
+          .delete&lt;Collaborators&gt;(&#x60;http://localhost:8282/collaborators/${collaboratorId}&#x60;)
+          .subscribe((response) &#x3D;&gt; {
+            console.log(response);
+            this.toastr.warning(&#x27;No compatible population found.&#x27;, &#x27;Warning&#x27;);
+            row.populationName &#x3D; &#x27;&#x27;;
+          });
+        return; // Exit the function early
+      }
+
+      let compatiblePopulation: Populations | undefined;
+
+      populations.forEach((population) &#x3D;&gt; {
+        if (this.isPopulationCompatible(population, row)) {
+          compatiblePopulation &#x3D; population;
+        }
+      });
+
+      if (compatiblePopulation &amp;&amp; compatiblePopulation.id) {
+        const populationId &#x3D; compatiblePopulation.id;
+
+        // Update the collaborator object with the compatible population&#x27;s name
+        row.populationName &#x3D; compatiblePopulation.populationName;
+
+        // Send the updated collaborator object to the API
+        this.http
+          .put&lt;Collaborators&gt;(
+            &#x60;http://localhost:8282/populations/${populationId}/collab/${collaboratorId}&#x60;,
+            row
+          )
+          .subscribe(
+            (response) &#x3D;&gt; {
+              console.log(response);
+              this.toastr.success(
+                &#x27;Population updated successfully with collaborator data.&#x27;,
+                &#x27;Success&#x27;
+              );
+              console.log(&#x27;Population updated successfully with collaborator data&#x27;);
+
+              // Perform any additional actions or update the user interface after a successful population update
+            },
+            (error) &#x3D;&gt; {
+              console.error(error);
+              this.toastr.error(&#x27;Data not compatible&#x27;, &#x27;Error&#x27;);
+              // Perform any additional actions for an error during the population update
+            }
+          );
+      } else {
+        // Show toastr message when there is no compatible population
+      //  this.toastr.error(&#x27;Not existing Any Population in Application&#x27;, &#x27;Error&#x27;);
+        row.populationName &#x3D; &#x27;&#x27;;
+
+        // Also, call the delete API and show toaster warning in this case
+        this.http
+          .delete&lt;Collaborators&gt;(&#x60;http://localhost:8282/collaborators/${collaboratorId}&#x60;)
+          .subscribe((response) &#x3D;&gt; {
+            console.log(response);
+            this.toastr.warning(&#x27;No compatible population found.&#x27;, &#x27;Warning&#x27;);
+            row.populationName &#x3D; &#x27;&#x27;;
+          });
+      }
+    });
+  }
+
+  isPopulationCompatible(population: Populations, row: Collaborators): boolean {
+    return (
+      population.contratType &#x3D;&#x3D;&#x3D; row.contratType &amp;&amp;
+      population.dureeTravail &#x3D;&#x3D;&#x3D; row.dureeTravail &amp;&amp;
+      population.dateDebutContrat &#x3D;&#x3D;&#x3D; row.dateDebutContrat &amp;&amp;
+      population.dateFinContrat &#x3D;&#x3D;&#x3D; row.dateFinContrat &amp;&amp;
+      population.anciennete &#x3D;&#x3D;&#x3D; row.anciennete &amp;&amp;
+      population.categorieSocioProfessionnelle &#x3D;&#x3D;&#x3D; row.categorieSocioProfessionnelle &amp;&amp;
+      population.departement &#x3D;&#x3D;&#x3D; row.departement &amp;&amp;
+      population.genre &#x3D;&#x3D;&#x3D; row.genre &amp;&amp;
+      population.age &#x3D;&#x3D;&#x3D; row.age &amp;&amp;
+      population.niveauEducation &#x3D;&#x3D;&#x3D; row.niveauEducation &amp;&amp;
+      population.regionGeographique &#x3D;&#x3D;&#x3D; row.regionGeographique
+    );
+  }
+
+
+  getPopulations(): Observable&lt;Populations[]&gt; {
+    return this.http.get&lt;Populations[]&gt;(&#x27;http://localhost:8282/populations&#x27;);
+  }
+
+  openUpdatedList(populationId: number): void {
+    const dialogRef &#x3D; this.dialog.open(UpdateCollabBodyComponent, {
+      data: { id: populationId }, // Pass the populationId as data
+    });
+
+    dialogRef.afterClosed().subscribe(result &#x3D;&gt; {
+      console.log(&#x27;The dialog was closed&#x27;);
+      // You can perform any actions after the dialog is closed if needed
+      // For example, you can refresh the data source to reflect the changes
+      this.fetchCollaborators();
+    });
+  }
+
+  openDeleteCollab(collabId: number): void {
+    const dialogCollab &#x3D; this.dialog.open(DeleteCollabBodyComponent, {
+      data: { id: collabId },
+    });
+
+    dialogCollab.afterClosed().subscribe((result: boolean) &#x3D;&gt; {
+      if (result) {
+        // Population was deleted, update the table
+        this.fetchCollaborators();
+      }
+    });
+  }
+  openPopulation(populationName: string): void {
+    const dialogCollab &#x3D; this.dialog.open(GetpopulationNameBodyComponent, {
+      data: { populationname: populationName },
+    });
+  }
+
+   // dialogCollab.afterClosed().subscribe((result: boolean) &#x3D;&gt; {
+   //   if (result) {
+        // Population was deleted, update the table
+  //      this.fetchCollaborators();
+  //    }
+  //  });
+
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'Authority.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

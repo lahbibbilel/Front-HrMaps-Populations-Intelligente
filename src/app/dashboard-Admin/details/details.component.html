@@ -1,0 +1,125 @@
+<!-- update-population-body.component.html -->
+
+<div class="example-form-container">
+  <mat-form-field class="example-full-width">
+    <mat-label >details</mat-label>
+    <input matInput disabled value="details">
+  </mat-form-field>
+
+  <table class="example-full-width" cellspacing="0">
+
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Age</mat-label>
+          <input matInput value="{{population.age}}" name="age" required disabled>
+
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>seniority</mat-label>
+          <input matInput value="{{population.anciennete}}" name="anciennete" required disabled>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Socio-Professional Category</mat-label>
+          <input matInput value="{{population.categorieSocioProfessionnelle}}" name="categorieSocioProfessionnelle" required disabled>
+
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>department</mat-label>
+          <input matInput value="{{population.departement}}" name="departement" required disabled>
+        </mat-form-field>
+      </td>
+    </tr>
+
+
+
+  </table>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Gender</mat-label>
+    <input matInput value="{{population.genre}}" name="genre" required disabled>
+
+  </mat-form-field>
+
+  <p>
+    <mat-form-field class="example-full-width">
+      <mat-label>education_level</mat-label>
+      <input matInput value="{{population.niveauEducation}}"
+              id="start" name="niveauEducation"  name="niveauEducation" required disabled>
+
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>region_geographic</mat-label>
+      <input matInput value="{{population.regionGeographique}}"
+             id="finish" name="regionGeographique"  name="regionGeographique" required disabled>
+
+    </mat-form-field>
+  </p>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>populationName</mat-label>
+          <input matInput value="{{population.populationName}}"
+                 name="populationName" required disabled >
+
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>contractType</mat-label>
+          <input matInput value="{{population.contratType}}"
+                 placeholder="Ex. California" name="contractType" required disabled>
+
+        </mat-form-field>
+      </td>
+
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>contract start date</mat-label>
+          <input matInput value="{{population.dateDebutContrat}}"
+                 placeholder="Ex. California" name="gender" required disabled>
+
+        </mat-form-field>
+      </td>
+
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>contract end date</mat-label>
+          <input matInput  value="{{population.dateFinContrat}}" name="age" required disabled>
+
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>working time</mat-label>
+          <input matInput  value="{{population.dureeTravail}}" name="dureeTravail" required disabled>
+
+        </mat-form-field>
+      </td>
+     </tr>
+
+  </table>
+
+  <section class="example-button-row">
+
+  </section>
+
+  <mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="closeDialog()">Close</button>
+
+  </mat-dialog-actions>
+
+</div>
